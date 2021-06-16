@@ -5,6 +5,7 @@ call plug#begin()
 
 " Aesthetics - Main
 Plug 'dracula/vim', { 'commit': '147f389f4275cec4ef43ebc25e2011c57b45cc00' }
+Plug 'altercation/vim-colors-solarized'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'ryanoasis/vim-devicons'
@@ -44,6 +45,7 @@ Plug 'chrisbra/Colorizer'
 Plug 'KabbAmine/vCoolor.vim'
 Plug 'heavenshell/vim-pydocstring', { 'do': 'make install' }
 Plug 'vim-scripts/loremipsum'
+Plug 'vim-scripts/restore_view.vim'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'metakirby5/codi.vim'
@@ -59,7 +61,7 @@ let g:python3_host_prog = expand('~/.config/nvim/env/bin/python')
 
 """ Coloring
 syntax on
-color dracula
+color forgotten-dark
 highlight Pmenu guibg=white guifg=black gui=bold
 highlight Comment gui=bold
 highlight Normal gui=none
@@ -83,6 +85,8 @@ set wrap breakindent
 set encoding=utf-8
 set number
 set title
+set splitright
+set splitbelow
 
 """ Plugin Configurations
 
@@ -237,4 +241,10 @@ autocmd FileType python nmap <leader>x :0,$!~/.config/nvim/env/bin/python -m yap
 nmap <silent> <leader><leader> :noh<CR>
 nmap <Tab> :bnext<CR>
 nmap <S-Tab> :bprevious<CR>
+
+inoremap jj <ESC>
+set foldmethod=indent   
+set foldnestmax=10
+set nofoldenable
+set foldlevel=2
 
